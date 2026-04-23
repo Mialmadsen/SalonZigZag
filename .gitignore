@@ -1,6 +1,9 @@
 # Ignore everything
 /*
 
+# Claude Code configuration — local only, not for version control
+CLAUDE.md
+
 # But do not ignore the .gitignore file itself...
 !.gitignore
 !.github/
