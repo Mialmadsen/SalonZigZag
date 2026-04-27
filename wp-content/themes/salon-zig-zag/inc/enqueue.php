@@ -61,6 +61,13 @@ function szz_enqueue_assets()
         ['szz-main'],
         '1.0.0'
     );
+    wp_enqueue_script(
+        'szz-navigation',
+        get_template_directory_uri() . '/assets/js/navigation.js',
+        [],
+        '1.0.0',
+        true
+    );
 }
 
 
