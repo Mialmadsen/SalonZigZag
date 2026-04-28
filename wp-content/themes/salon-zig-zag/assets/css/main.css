@@ -243,8 +243,8 @@ section {
 .site-footer {
   background-color: var(--color-bg-footer);
   color:            var(--color-text);
-  padding-block:    var(--space-section);
-  padding-inline:   var(--page-margin);  /* fluid via clamp() */
+  /* padding-block:    var(--space-section); */
+  /* padding-inline:   var(--page-margin);  fluid via clamp() */
 }
 
 /* ============================================================
