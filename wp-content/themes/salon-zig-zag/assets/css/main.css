@@ -247,9 +247,83 @@ section {
   padding-inline:   var(--page-margin);  /* fluid via clamp() */
 }
 
+/* ============================================================
+   8. WOOCOMMERCE
+   ============================================================ */
+   
+/* Product card */
+.woocommerce ul.products li.product {
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  position: relative;
+  transition: transform var(--transition);
+}
+
+/* Hover */
+.woocommerce ul.products li.product:hover {
+  transform: translateY(-3px);
+}
+
+/* Image */
+.woocommerce ul.products li.product img {
+  margin-bottom: var(--space-sm);
+}
+
+/* Title */
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  line-height: 1.25;
+  margin-bottom: var(--space-xs);
+}
+
+/* Price */
+.woocommerce ul.products li.product .price {
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-top: var(--space-xs);
+}
+
+
+
+/* Cart icon */
+.woocommerce ul.products li.product .button::before {
+  font-size: var(--text-h4);
+}
+
+/* Button hover */
+.woocommerce ul.products li.product .button:hover {
+  opacity: 0.6;
+}
+
+/* Make card positioning context */
+.woocommerce ul.products li.product {
+  position: relative;
+  padding-bottom: 60px; /* space for bottom row */
+}
+
+/* Price bottom-left */
+.woocommerce ul.products li.product .price {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  margin: 0;
+}
+
+/* Add to cart bottom-right */
+.woocommerce ul.products li.product .button {
+  position: absolute;
+  bottom: var(--space-sm);
+  right: var(--space-sm);
+  margin: 0;
+  background: none;
+  border: none;
+}
 
 /* ============================================================
-   8. RESPONSIVE
+   9. RESPONSIVE
    ============================================================ */
 
 /* Mobile — layout only, type/spacing handled by clamp() */
