@@ -1,0 +1,52 @@
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+/* Secondary — outline */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-button);
+  font-weight: 400;
+  line-height: 1.33;
+  color: var(--color-text);
+  background-color: transparent;
+  border: 1.5px solid var(--color-dark);
+  border-radius: var(--radius);
+  padding: 0.875rem 2.5rem;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-beige);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--color-brown);
+  outline-offset: 2px;
+}
+
+.btn-secondary:disabled,
+.btn-secondary[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Disabled state — both button types */
+.btn-primary:disabled,
+.btn-primary[aria-disabled="true"] {
+  opacity: 0.4;
+}
+
+/* Mobile */
+@media (max-width: 664px) {
+  .btn-secondary {
+    width: 9.625rem;
+    height: 2.75rem;
+    padding: 0.625rem 1.5rem;
+  }
+}

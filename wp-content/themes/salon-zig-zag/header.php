@@ -69,6 +69,9 @@
                         </g>
                     </svg>
                 </a>
+                <!-- Calls the button -->
+                <?php get_template_part('template-parts/components/button-book'); ?>
+
             </div>
 
 

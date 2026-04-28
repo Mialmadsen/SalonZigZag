@@ -1,0 +1,129 @@
+/* ============================================================
+   8. WOOCOMMERCE
+   ============================================================ */
+.content-area {
+  padding: var(--page-margin);
+}
+
+/* Shop header */
+.shop-header {
+  margin-bottom: var(--space-lg);
+  max-width: 800px;
+}
+
+.shop-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  margin-bottom: var(--space-sm);
+}
+
+.shop-intro {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+}
+
+/* Product card */
+.woocommerce ul.products li.product {
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  position: relative;
+  transition: transform var(--transition);
+  padding-bottom: 3.75rem; /* space for bottom row */
+}
+
+/* Hover */
+.woocommerce ul.products li.product:hover {
+  transform: translateY(-3px);
+}
+
+/* Image */
+.woocommerce ul.products li.product img {
+  margin-bottom: var(--space-sm);
+}
+
+/* Title */
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  line-height: 1.25;
+  margin-bottom: var(--space-xs);
+}
+
+/* Price */
+.woocommerce ul.products li.product .price {
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: var(--color-text);
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  margin: 0;
+}
+
+/* Cart  */
+.woocommerce ul.products li.product .button::before {
+  font-size: var(--text-h4);
+}
+
+/* Button hover */
+.woocommerce ul.products li.product .button:hover {
+  opacity: 0.6;
+}
+
+/* Add to cart bottom-right */
+.woocommerce ul.products li.product .button {
+  position: absolute;
+  bottom: var(--space-sm);
+  right: var(--space-sm);
+  margin: 0;
+  background: none;
+  border: none;
+}
+/* WOOCOMMERCE ADD TO CART BUTTON (PRODUCT GRID) */
+
+.woocommerce ul.products li.product .button.add_to_cart_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  line-height: 1;
+
+  color: var(--color-text);
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-dark);
+  border-radius: var(--radius);
+
+  padding: 0.625rem 0.875rem;
+
+  cursor: pointer;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+/* Hover state — green text + green border, no background */
+.woocommerce ul.products li.product .button.add_to_cart_button:hover {
+  background-color: transparent;
+  color: var(--color-olive);
+  border-color: var(--color-olive);
+}
+
+/* Focus accessibility */
+.woocommerce ul.products li.product .button.add_to_cart_button:focus-visible {
+  outline: 2px solid var(--color-olive);
+  outline-offset: 2px;
+}
+
+/* Added-to-cart state */
+.woocommerce ul.products li.product .button.add_to_cart_button.added {
+  background-color: var(--color-olive);
+  color: var(--color-white);
+  border-color: var(--color-olive);
+}

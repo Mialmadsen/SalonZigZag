@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-<section>
+<section class="container">
+    <?php echo do_shortcode('[trustindex no-registration=google]'); ?>
 
 </section>
 <?php get_footer(); ?>

@@ -44,6 +44,12 @@ function szz_enqueue_assets()
         '1.0.0'
     );
     wp_enqueue_style(
+        'szz-reviews',
+        get_template_directory_uri() . '/assets/css/components/reviews.css',
+        ['szz-main'],
+        '1.0.0'
+    );
+    wp_enqueue_style(
         'szz-about-page',
         get_template_directory_uri() . '/assets/css/pages/about-page.css',
         ['szz-main'],
@@ -61,6 +67,15 @@ function szz_enqueue_assets()
         ['szz-main'],
         '1.0.0'
     );
+    if (is_woocommerce()) {
+        wp_enqueue_style(
+            'szz-shop-page',
+            get_template_directory_uri() . '/assets/css/pages/shop-page.css',
+            ['szz-main'],
+            '1.0.0'
+        );
+    }
+
     wp_enqueue_script(
         'szz-navigation',
         get_template_directory_uri() . '/assets/js/navigation.js',

@@ -3,64 +3,61 @@
    Fonts: The Seasons (Adobe/Typekit) · Montserrat (Google)
    ============================================================ */
 
-
 /* ============================================================
    1. DESIGN TOKENS
    ============================================================ */
 
 :root {
-
   /* Colours */
-  --color-dark:    #181913;
-  --color-brown:   #816856;
-  --color-olive:   #888F62;
-  --color-beige:   #F0DEC5;
-  --color-white:   #FFFAFA;
-  --color-blush:   #EBC7C9;
+  --color-dark: #181913;
+  --color-brown: #816856;
+  --color-olive: #888f62;
+  --color-beige: #f0dec5;
+  --color-white: #fffafa;
+  --color-blush: #ebc7c9;
 
   /* Semantic roles */
-  --color-text:          var(--color-dark);
-  --color-text-muted:    var(--color-brown);
+  --color-text: var(--color-dark);
+  --color-text-muted: var(--color-brown);
   --color-text-disabled: rgba(24, 25, 19, 0.35);
-  --color-bg:            var(--color-white);
-  --color-bg-alt:        var(--color-beige);
-  --color-bg-footer:     var(--color-blush);
-  --color-border:        var(--color-olive);
+  --color-bg: var(--color-white);
+  --color-bg-alt: var(--color-beige);
+  --color-bg-footer: var(--color-blush);
+  --color-border: var(--color-olive);
   --color-border-subtle: rgba(136, 143, 98, 0.25);
 
   /* Fonts */
   --font-heading: "the-seasons", "Georgia", serif;
-  --font-body:    "Montserrat", "Arial", sans-serif;
+  --font-body: "Montserrat", "Arial", sans-serif;
 
   /* Type scale — fluid via clamp(min, fluid, max) */
-  --text-display: clamp(2rem, 2.5vw + 1rem, 3.5rem);     /* 32px → 56px */
-  --text-h1:      clamp(1.75rem, 2vw + 0.75rem, 2.5rem); /* 28px → 40px */
-  --text-h2:      clamp(1.375rem, 1.5vw + 0.5rem, 2rem); /* 22px → 32px */
-  --text-h3:      clamp(1.125rem, 1vw + 0.5rem, 1.5rem); /* 18px → 24px */
-  --text-h4:      1.25rem;                                /* 20px — fixed */
-  --text-body:    1rem;                                   /* 16px */
-  --text-small:   0.875rem;                               /* 14px */
-  --text-nav:     0.9375rem;                              /* 15px */
-  --text-button:  clamp(1.125rem, 1vw + 0.5rem, 1.5rem); /* 18px → 24px */
+  --text-display: clamp(2rem, 2.5vw + 1rem, 3.5rem); /* 32px → 56px */
+  --text-h1: clamp(1.75rem, 2vw + 0.75rem, 2.5rem); /* 28px → 40px */
+  --text-h2: clamp(1.375rem, 1.5vw + 0.5rem, 2rem); /* 22px → 32px */
+  --text-h3: clamp(1.125rem, 1vw + 0.5rem, 1.5rem); /* 18px → 24px */
+  --text-h4: 1.25rem; /* 20px — fixed */
+  --text-body: 1rem; /* 16px */
+  --text-small: 0.875rem; /* 14px */
+  --text-nav: 0.9375rem; /* 15px */
+  --text-button: clamp(0.9375rem, 1vw + 0.3rem, 1.125rem);
 
   /* Spacing */
-  --space-xs:      0.75rem;                               /* 12px */
-  --space-sm:      1rem;                                  /* 16px */
-  --space-md:      1.5rem;                                /* 24px */
-  --space-lg:      2rem;                                  /* 32px */
-  --space-section: clamp(4rem, 5vw + 1rem, 6rem);        /* 64px → 96px */
-  --page-margin:   clamp(1.5rem, 5vw + 0.5rem, 5rem);    /* 24px → 80px */
+  --space-xs: 0.75rem; /* 12px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 1.5rem; /* 24px */
+  --space-lg: 2rem; /* 32px */
+  --space-section: clamp(4rem, 5vw + 1rem, 6rem); /* 64px → 96px */
+  --page-margin: clamp(1.5rem, 5vw + 0.5rem, 5rem); /* 24px → 80px */
 
   /* Misc */
   --radius: 5px;
   --shadow-button:
-    0px 12px 40px -8px rgba(129, 104, 86, 0.40),
+    0px 12px 40px -8px rgba(129, 104, 86, 0.4),
     inset 0px 3px 4px rgba(255, 250, 250, 0.35),
     inset 0px -1px 2px rgba(24, 25, 19, 0.35);
 
   --transition: 0.2s ease;
 }
-
 
 /* ============================================================
    2. RESET
@@ -104,45 +101,58 @@ ol {
   list-style: none;
 }
 
-
 /* ============================================================
    3. BASE
    ============================================================ */
 
 body {
-  font-family:      var(--font-body);
-  font-size:        var(--text-body);
-  line-height:      1.625;
-  color:            var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.625;
+  color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family:    var(--font-heading);
-  font-weight:    400;
-  line-height:    1.2;
-  color:          var(--color-text);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text);
 }
 
-h1 { font-size: var(--text-h1); }
-h2 { font-size: var(--text-h2); }
-h3 { font-size: var(--text-h3); }
-h4 { font-size: var(--text-h4); }
+h1 {
+  font-size: var(--text-h1);
+}
+h2 {
+  font-size: var(--text-h2);
+}
+h3 {
+  font-size: var(--text-h3);
+}
+h4 {
+  font-size: var(--text-h4);
+}
 
 p {
-  font-size:   var(--text-body);
+  font-size: var(--text-body);
   line-height: 1.625;
 }
 
 small {
-  font-size:  var(--text-small);
-  color:      var(--color-text-muted);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
   line-height: 1.57;
 }
 
-strong { font-weight: 500; }
-
+strong {
+  font-weight: 500;
+}
 
 /* ============================================================
    4. LAYOUT
@@ -163,58 +173,27 @@ section {
   padding-block: var(--space-section);
 }
 
-
 /* ============================================================
-   5. NAVIGATION
-   ============================================================ */
-
-.site-header {
-  padding-block: var(--space-md);
-  background-color: var(--color-bg);
-}
-
-.site-nav {
-  display:         flex;
-  align-items:     center;
-  justify-content: space-between;
-  gap:             var(--space-md);
-}
-
-.site-nav a {
-  font-family:  var(--font-body);
-  font-size:    var(--text-nav);
-  font-weight:  500;
-  line-height:  1.47;
-  color:        var(--color-text);
-  transition:   color var(--transition);
-}
-
-.site-nav a:hover {
-  color: var(--color-text-muted);
-}
-
-
-/* ============================================================
-   6. BUTTON
+   5. BUTTON
    ============================================================ */
 
 .btn-primary {
-  display:          inline-flex;
-  align-items:      center;
-  justify-content:  center;
-  font-family:      var(--font-heading);
-  font-size:        var(--text-button);
-  font-weight:      400;
-  line-height:      1.33;
-  color:            var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-button);
+  font-weight: 400;
+  line-height: 1.33;
+  color: var(--color-text);
   background-color: var(--color-blush);
-  border:           none;
-  border-radius:    var(--radius);
-  padding:          14px 40px;
-  cursor:           pointer;
-  box-shadow:       var(--shadow-button);
-  transition:       background-color var(--transition);
-  text-decoration:  none;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  transition: background-color var(--transition);
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -222,177 +201,28 @@ section {
 }
 
 .btn-primary:focus-visible {
-  outline:          2px solid var(--color-brown);
-  outline-offset:   2px;
+  outline: 2px solid var(--color-brown);
+  outline-offset: 2px;
   background-color: var(--color-blush);
 }
 
 .btn-primary:disabled,
 .btn-primary[aria-disabled="true"] {
   background-color: var(--color-blush);
-  color:            var(--color-text-disabled);
-  box-shadow:       none;
-  cursor:           not-allowed;
-}
-
-
-/* ============================================================
-   7. FOOTER
-   ============================================================ */
-
-.site-footer {
-  background-color: var(--color-bg-footer);
-  color:            var(--color-text);
-  /* padding-block:    var(--space-section); */
-  /* padding-inline:   var(--page-margin);  fluid via clamp() */
+  color: var(--color-text-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
 }
 
 /* ============================================================
-   8. WOOCOMMERCE
-   ============================================================ */
-   .content-area{
-    padding: var(--page-margin);
-   }
-   
-   /* Shop header */
-   .shop-header {
-    margin-bottom: var(--space-lg);
-    max-width: 800px;
-  }
-  
-  .shop-title {
-    font-family: var(--font-heading);
-    font-size: var(--text-h2);
-    margin-bottom: var(--space-sm);
-  }
-  
-  .shop-intro {
-    font-family: var(--font-body);
-    font-size: var(--text-body);
-    line-height: 1.6;
-  }
-  
-/* Product card */
-.woocommerce ul.products li.product {
-  background: var(--color-white);
-  padding: var(--space-md);
-  border-radius: var(--radius);
-  position: relative;
-  transition: transform var(--transition);
-  padding-bottom: 60px; /* space for bottom row */
-}
-
-/* Hover */
-.woocommerce ul.products li.product:hover {
-  transform: translateY(-3px);
-}
-
-/* Image */
-.woocommerce ul.products li.product img {
-  margin-bottom: var(--space-sm);
-}
-
-/* Title */
-.woocommerce ul.products li.product .woocommerce-loop-product__title {
-  font-family: var(--font-heading);
-  font-size: var(--text-h3);
-  line-height: 1.25;
-  margin-bottom: var(--space-xs);
-}
-
-/* Price */
-.woocommerce ul.products li.product .price {
-  font-size: var(--text-body);
-  font-weight: 500;
-  color: var(--color-text);
-  margin-top: var(--space-xs);
-}
-
-
-
-/* Cart  */
-.woocommerce ul.products li.product .button::before {
-  font-size: var(--text-h4);
-}
-
-/* Button hover */
-.woocommerce ul.products li.product .button:hover {
-  opacity: 0.6;
-}
-
-
-/* Price bottom-left */
-.woocommerce ul.products li.product .price {
-  position: absolute;
-  bottom: var(--space-sm);
-  left: var(--space-sm);
-  margin: 0;
-}
-
-/* Add to cart bottom-right */
-.woocommerce ul.products li.product .button {
-  position: absolute;
-  bottom: var(--space-sm);
-  right: var(--space-sm);
-  margin: 0;
-  background: none;
-  border: none;
-}
-/* WOOCOMMERCE ADD TO CART BUTTON (PRODUCT GRID) */
-
-   .woocommerce ul.products li.product .button.add_to_cart_button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  
-    font-family: var(--font-body);
-    font-size: var(--text-small);
-    font-weight: 500;
-    line-height: 1;
-  
-    color: var(--color-text);
-    background-color: var(--color-white);
-  
-    border: 1px solid var(--color-dark);
-    border-radius: var(--radius);
-  
-    padding: 10px 14px;
-  
-    cursor: pointer;
-    transition: color var(--transition),
-                border-color var(--transition),
-                transform var(--transition);
-  }
-  
-  /* Hover state — green text + green border, no background */
-  .woocommerce ul.products li.product .button.add_to_cart_button:hover {
-    background-color: transparent;
-    color: var(--color-olive);
-    border-color: var(--color-olive);
-  }
-  
-  
-  /* Focus accessibility */
-  .woocommerce ul.products li.product .button.add_to_cart_button:focus-visible {
-    outline: 2px solid var(--color-olive);
-    outline-offset: 2px;
-  }
-  
-  /* Added-to-cart state */
-  .woocommerce ul.products li.product .button.add_to_cart_button.added {
-    background-color: var(--color-olive);
-    color: var(--color-white);
-    border-color: var(--color-olive);
-  }
-/* ============================================================
-   9. RESPONSIVE
+   6. RESPONSIVE
    ============================================================ */
 
 /* Mobile — layout only, type/spacing handled by clamp() */
 @media (max-width: 664px) {
   .btn-primary {
-    width:   154px;
-    height:  44px;
+    width: 9.625rem;
+    height: 2.75rem;
     padding: 0.625rem 1.5rem;
   }
 }

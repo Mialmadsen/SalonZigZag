@@ -20,20 +20,22 @@
 
             <!-- Tekst under logo -->
             <?php if(get_field('footer_text_under_logo', 'option')) : ?>
-                <p class="footer-brand-text"><?php the_field('footer_text_under_logo', 'option'); ?></p>
+                <p class="footer-brand-text"><?php echo esc_html(get_field('footer_text_under_logo', 'option')); ?></p>
             <?php endif; ?>
 
             <!-- Sociale medier -->
             <div class="footer-socials">
                 <?php if(get_field('footer_facebook_url', 'option')) : ?>
-                    <a class="icon" href="<?php the_field('footer_facebook_url', 'option'); ?>" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <a class="icon" href="<?php echo esc_url(get_field('footer_facebook_url', 'option')); ?>" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h98.2V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480h129c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64z"/></svg>
                     </a>
                 <?php endif; ?>
 
                 <?php if(get_field('footer_insta_url', 'option')) : ?>
-                    <a class="icon" href="<?php the_field('footer_insta_url', 'option'); ?>" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.8 224.1 370.8 339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.3 0-74.7-33.4-74.7-74.7s33.4-74.7 74.7-74.7 74.7 33.4 74.7 74.7-33.4 74.7-74.7 74.7zM370.5 136.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zM398.8 80c-20.1-20.1-46.8-31.1-75.2-31.1H124.4C65.8 48.9 18 96.7 18 155.3v201.4c0 58.6 47.8 106.4 106.4 106.4h199.2c58.6 0 106.4-47.8 106.4-106.4V155.3c0-28.4-11-55.1-31.2-75.3zM384 356.7c0 33.1-27 60.1-60.1 60.1H124.1c-33.1 0-60.1-27-60.1-60.1V155.3c0-33.1 27-60.1 60.1-60.1h199.8c33.1 0 60.1 27 60.1 60.1z"/></svg>
+                    <a class="icon" href="<?php echo esc_url(get_field('footer_insta_url', 'option')); ?>" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M194.4 211.7a53.3 53.3 0 1 0 59.2 88.6 53.3 53.3 0 1 0-59.2-88.6m142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12-18.1-7.1-57.6-6.8-83.1-6.5-4.1 0-7.9.1-11.2.1s-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2 0 4.1.1 7.9.1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2 2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5 4.1 0 7.9-.1 11.2-.1s7.2 0 11.4.1c25.5.3 64.8.7 82.9-6.5 6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83 0-4.2-.1-8.1-.1-11.4s0-7.1.1-11.4c.3-25.5.7-64.9-6.5-83-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5c18.1 12.1 30.6 30.9 34.9 52.2s-.2 43.5-12.3 61.6c-6 9-13.7 16.6-22.6 22.6s-19 10.1-29.6 12.2c-21.3 4.2-43.5-.2-61.6-12.3s-30.6-30.9-34.9-52.2.2-43.5 12.2-61.6 30.9-30.6 52.2-34.9 43.5.2 61.6 12.2h.1zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1 2.6-7.1 5.2-9.8 6.1-4.5 9.8-5.2 7.6-.4 11.1 1.1 6.5 3.9 8.6 7 3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2-3.9 3.2-6.2 4.2-4.8 1.5-7.3 1.5c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64zm-91 293c-18.7 18.7-41.4 24.6-67 25.9-26.4 1.5-105.6 1.5-132 0-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132 1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0 25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9-1.3 25.6-7.1 48.3-25.8 67z" />
+                        </svg>
                     </a>
                 <?php endif; ?>
             </div>
@@ -41,16 +43,16 @@
 
         <!-- Kontakt info -->
         <div class="footer-col">
-            <h3><?php the_field('footer_kontakt', 'option'); ?></h3>
+            <h3><?php echo esc_html(get_field('footer_kontakt', 'option')); ?></h3>
             <ul class="footer-list">
                 <?php if(get_field('footer_adress', 'option')) : ?>
-                    <li class="footer-address"><?php the_field('footer_adress', 'option'); ?></li>
+                    <li class="footer-address"><?php echo esc_html(get_field('footer_adress', 'option')); ?></li>
                 <?php endif; ?>
                 <?php if(get_field('footer_email', 'option')) : ?>
-                    <li><a href="mailto:<?php the_field('footer_email', 'option'); ?>"><?php the_field('footer_email', 'option'); ?></a></li>
+                    <li><a href="mailto:<?php echo esc_attr(get_field('footer_email', 'option')); ?>"><?php echo esc_html(get_field('footer_email', 'option')); ?></a></li>
                 <?php endif; ?>
                 <?php if(get_field('footer_telefon', 'option')) : ?>
-                    <li><a href="tel:<?php the_field('footer_telefon', 'option'); ?>"><?php the_field('footer_telefon', 'option'); ?></a></li>
+                    <li><a href="tel:<?php echo esc_attr(get_field('footer_telefon', 'option')); ?>"><?php echo esc_html(get_field('footer_telefon', 'option')); ?></a></li>
                 <?php endif; ?>
             </ul>
         </div>
@@ -63,14 +65,14 @@
                 $hours = new WP_Query(array('post_type' => 'opening-hour-section', 'posts_per_page' => -1, 'orderby' => 'menu_order', 'order' => 'ASC'));
                 if($hours->have_posts()) : while($hours->have_posts()) : $hours->the_post();
                 ?>
-                    <li><span><?php the_field('day_of_the_week'); ?></span><span><?php the_field('opening_hour'); ?></span></li>
+                    <li><span><?php echo esc_html(get_field('day_of_the_week')); ?></span><span><?php echo esc_html(get_field('opening_hour')); ?></span></li>
                 <?php endwhile; wp_reset_postdata(); endif; ?>
             </ul>
         </div>
 
         <!-- Kort / find os -->
         <div class="footer-col footer-col-map">
-            <h3><?php the_field('footer_find_os', 'option'); ?></h3>
+            <h3><?php echo esc_html(get_field('footer_find_os', 'option')); ?></h3>
             <?php $map = get_field('footer_map', 'option'); if($map) : ?>
                 <img class="footer-map" src="<?php echo esc_url($map['url']); ?>" alt="<?php echo esc_attr($map['alt']); ?>">
             <?php endif; ?>
@@ -80,7 +82,7 @@
 
     <!-- Copyright bund -->
     <div class="footer-bottom">
-        <p>© 2026 Salon Zig Zag · Agerbæk · Alle rettigheder forbeholdes</p>
+        <p>© <?php echo esc_html(date('Y')); ?> Salon Zig Zag · Agerbæk · Alle rettigheder forbeholdes</p>
     </div>
 
 </footer>
