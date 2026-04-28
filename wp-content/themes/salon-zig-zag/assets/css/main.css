@@ -250,6 +250,10 @@ section {
 /* ============================================================
    8. WOOCOMMERCE
    ============================================================ */
+   .content-area{
+    padding: var(--page-margin);
+   }
+   
    /* Shop header */
    .shop-header {
     margin-bottom: var(--space-lg);
@@ -275,6 +279,7 @@ section {
   border-radius: var(--radius);
   position: relative;
   transition: transform var(--transition);
+  padding-bottom: 60px; /* space for bottom row */
 }
 
 /* Hover */
@@ -315,11 +320,6 @@ section {
   opacity: 0.6;
 }
 
-/* Make card positioning context */
-.woocommerce ul.products li.product {
-  position: relative;
-  padding-bottom: 60px; /* space for bottom row */
-}
 
 /* Price bottom-left */
 .woocommerce ul.products li.product .price {
@@ -338,7 +338,52 @@ section {
   background: none;
   border: none;
 }
+/* WOOCOMMERCE ADD TO CART BUTTON (PRODUCT GRID) */
 
+   .woocommerce ul.products li.product .button.add_to_cart_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    line-height: 1;
+  
+    color: var(--color-text);
+    background-color: var(--color-white);
+  
+    border: 1px solid var(--color-dark);
+    border-radius: var(--radius);
+  
+    padding: 10px 14px;
+  
+    cursor: pointer;
+    transition: color var(--transition),
+                border-color var(--transition),
+                transform var(--transition);
+  }
+  
+  /* Hover state — green text + green border, no background */
+  .woocommerce ul.products li.product .button.add_to_cart_button:hover {
+    background-color: transparent;
+    color: var(--color-olive);
+    border-color: var(--color-olive);
+  }
+  
+  
+  /* Focus accessibility */
+  .woocommerce ul.products li.product .button.add_to_cart_button:focus-visible {
+    outline: 2px solid var(--color-olive);
+    outline-offset: 2px;
+  }
+  
+  /* Added-to-cart state */
+  .woocommerce ul.products li.product .button.add_to_cart_button.added {
+    background-color: var(--color-olive);
+    color: var(--color-white);
+    border-color: var(--color-olive);
+  }
 /* ============================================================
    9. RESPONSIVE
    ============================================================ */
