@@ -250,7 +250,24 @@ section {
 /* ============================================================
    8. WOOCOMMERCE
    ============================================================ */
-   
+   /* Shop header */
+   .shop-header {
+    margin-bottom: var(--space-lg);
+    max-width: 800px;
+  }
+  
+  .shop-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .shop-intro {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+  
 /* Product card */
 .woocommerce ul.products li.product {
   background: var(--color-white);
@@ -320,23 +337,6 @@ section {
   margin: 0;
   background: none;
   border: none;
-}
-
-.shop-header {
-  margin-bottom: var(--space-lg);
-  max-width: 800px;
-}
-
-.shop-title {
-  font-family: var(--font-heading);
-  font-size: var(--text-h2);
-  margin-bottom: var(--space-sm);
-}
-
-.shop-intro {
-  font-family: var(--font-body);
-  font-size: var(--text-body);
-  line-height: 1.6;
 }
 
 /* ============================================================
