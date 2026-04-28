@@ -305,7 +305,7 @@ section {
 
 
 
-/* Cart icon */
+/* Cart  */
 .woocommerce ul.products li.product .button::before {
   font-size: var(--text-h4);
 }
