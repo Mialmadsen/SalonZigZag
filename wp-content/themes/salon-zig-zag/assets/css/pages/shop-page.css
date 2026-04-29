@@ -1,6 +1,8 @@
 /* ============================================================
-   8. WOOCOMMERCE
+   1. WOOCOMMERCE
    ============================================================ */
+
+   /* SHOP FRONT PAGE */
 .content-area {
   padding: var(--page-margin);
 }
@@ -127,3 +129,98 @@
   color: var(--color-white);
   border-color: var(--color-olive);
 }
+
+
+
+/* SHOP SINGLE PRODUCT PAGE */
+
+/* === SINGLE PRODUCT ADD TO CART (MATCH PRODUCT GRID STYLE) === */
+
+.woocommerce div.product form.cart .single_add_to_cart_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  line-height: 1;
+
+  color: var(--color-text);
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-dark);
+  border-radius: var(--radius);
+
+  padding: 0.625rem 0.875rem;
+
+  cursor: pointer;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+/* Hover */
+.woocommerce div.product form.cart .single_add_to_cart_button:hover {
+  background-color: transparent;
+  color: var(--color-olive);
+  border-color: var(--color-olive);
+}
+
+/* Focus */
+.woocommerce div.product form.cart .single_add_to_cart_button:focus-visible {
+  outline: 2px solid var(--color-olive);
+  outline-offset: 2px;
+}
+
+/* Force override WooCommerce purple (.alt) */
+.woocommerce div.product form.cart .single_add_to_cart_button.alt {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border-color: var(--color-dark);
+}
+
+/* === SPACING: QUANTITY + ADD TO CART === */
+
+.woocommerce div.product form.cart .quantity {
+  margin-top: var(--space-sm);   /* space above quantity */
+  margin-bottom: var(--space-sm); /* space between quantity and button */
+}
+
+.woocommerce div.product form.cart .single_add_to_cart_button {
+  margin-top: var(--space-sm); /* extra space above button */
+}
+
+/* === FORCE MOVE QUANTITY DOWN === */
+
+form.cart > .quantity {
+  margin-top: 1rem;
+}
+
+form.cart > .single_add_to_cart_button {
+  margin-top: 1rem;
+}
+
+/* Stronger specificity */
+.woocommerce div.product form.cart > .quantity {
+  margin-top: 1rem !important;
+}
+
+/* Space between quantity and button */
+.woocommerce div.product form.cart > .single_add_to_cart_button {
+  margin-left: var(--space-sm);
+}
+
+/* === PRODUCT META LINE BREAK === */
+
+.woocommerce div.product .product_meta .posted_in {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* optional: remove extra spacing on last item */
+.woocommerce div.product .product_meta .posted_in:last-child {
+  margin-bottom: 0;
+}
+
