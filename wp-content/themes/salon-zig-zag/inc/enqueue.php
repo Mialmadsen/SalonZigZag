@@ -49,6 +49,14 @@ function szz_enqueue_assets()
         ['szz-main'],
         '1.0.0'
     );
+
+    wp_enqueue_style(
+        'szz-info-card',
+        get_template_directory_uri() . '/assets/css/components/info-card.css',
+        ['szz-main'],
+        '1.0.0'
+    );
+    
     wp_enqueue_style(
         'szz-about-page',
         get_template_directory_uri() . '/assets/css/pages/about-page.css',
