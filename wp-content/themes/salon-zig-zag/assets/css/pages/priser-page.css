@@ -1,0 +1,129 @@
+/* =========================================
+   PAGE BASE
+========================================= */
+
+.priser-page {
+    background-color: var(--color-bg);
+  }
+  
+  /* =========================================
+     INTRO
+  ========================================= */
+  
+  .priser-intro-section {
+    padding-block: var(--space-section);
+  }
+  
+  .priser-intro {
+    max-width: 50rem;
+  }
+  
+  .priser-intro h1 {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .priser-intro p {
+    color: var(--color-text-muted);
+  }
+  
+  /* =========================================
+     LIST SECTION (reduced top spacing)
+  ========================================= */
+  
+  .priser-list-section {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-section);
+  }
+  
+  /* =========================================
+     GRID
+  ========================================= */
+  
+  .priser-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+  
+  /* =========================================
+     CARD (airy / no border look)
+  ========================================= */
+  
+  .price-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+  
+    background-color: transparent;
+    border: none;
+  }
+  
+  /* =========================================
+     HEADING
+  ========================================= */
+  
+  .price-card h3 {
+    font-size: var(--text-h3);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+  }
+  
+  /* =========================================
+     ROWS
+  ========================================= */
+  
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 0.25rem;
+  }
+  
+  /* service */
+  .price-row span:first-child {
+    font-size: var(--text-body);
+    color: var(--color-text);
+  }
+  
+  /* price */
+  .price-row span:last-child {
+    font-size: var(--text-body);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+  
+  /* =========================================
+     NOTE TEXT (CENTERED UNDER GRID)
+  ========================================= */
+  
+  .priser-note {
+    margin-top: var(--space-lg);
+    max-width: 40rem;
+    margin-inline: auto;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+  
+  /* =========================================
+     CTA
+  ========================================= */
+  
+  .priser-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-lg);
+  }
+
+  
+  /* =========================================
+     MOBILE
+  ========================================= */
+  
+  @media (max-width: 48rem) {
+    .priser-grid {
+      grid-template-columns: 1fr;
+    }
+  }
