@@ -83,6 +83,14 @@ function szz_enqueue_assets()
         '1.0.0',
         true
     );
+
+    wp_enqueue_script(
+        'szz-services-slider',
+        get_template_directory_uri() . '/assets/js/services-slider.js',
+        [],
+        '1.0.0',
+        true
+    );
 }
 
 
