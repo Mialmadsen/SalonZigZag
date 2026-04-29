@@ -1,0 +1,100 @@
+.value-section {
+    padding-block: var(--space-section);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.value-section.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-inline: var(--page-margin);
+}
+
+/* --- Overskrift (Centreret og på 2 linjer) --- */
+.value-section__big-header {
+    font-size: var(--text-h2);
+    text-align: center;
+    max-width: 35rem; 
+    margin-inline: auto;
+    margin-bottom: var(--space-section); 
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+/* --- Grid Layout --- */
+.value-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    align-items: stretch;
+    /* Her skaber vi den luft, du bad om */
+    margin-bottom: var(--space-section) !important;
+}
+
+/* --- Det enkelte kort --- */
+.value-card {
+    position: relative;
+    padding-inline: var(--space-lg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Vertikale linjer mellem kortene --- */
+.value-card:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0.125rem;
+    background-color: var(--color-border);
+    opacity: 0.8;
+}
+
+.value-card__header {
+    font-size: var(--text-h3);
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+    line-height: 1.1;
+}
+
+.value-card__text {
+    font-size: var(--text-body);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* --- Beholder til Book Tid knappen --- */
+.value-section__button-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    clear: both;
+}
+
+/* Tvinger selve knappen til at fjerne marginer, der skubber den skævt */
+.value-section__button-wrapper .btn-primary {
+    margin: 0 !important;
+    display: inline-block !important;
+}
+
+/* --- Mobil-tilpasning --- */
+@media (max-width: 60rem) {
+    .value-cards-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        margin-bottom: var(--space-xl) !important;
+    }
+    
+    .value-card:not(:first-child)::before {
+        display: none;
+    }
+
+    .value-section__big-header {
+        max-width: 100%;
+    }
+}

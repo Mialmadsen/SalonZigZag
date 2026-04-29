@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 
-<section class="container">
-    <?php echo do_shortcode('[trustindex no-registration=google]'); ?>
-</section>
 
 <!-- Info card section  -->
 <?php
@@ -31,6 +28,12 @@ endif;
 ?>
 <!-- Info card section done  -->
 
+<?php get_template_part('template-parts/components/value-card'); ?>
+
+
+<section class="container">
+    <?php echo do_shortcode('[trustindex no-registration=google]'); ?>
+</section>
 
 
 <?php get_footer(); ?>
