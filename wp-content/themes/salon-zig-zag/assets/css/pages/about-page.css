@@ -27,10 +27,21 @@
     border-radius: var(--radius);
 }
 
+.about-page section,
+.about-page .container {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;    
+}
+
 
 /* Reverse version */
 .info-card-reverse .info-card-container {
     flex-direction: row-reverse;
+}
+
+.about-extra-section.info-card-reverse {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .info-card__text-part a {
@@ -39,6 +50,8 @@
     align-self: flex-start;
     margin-top: var(--space-md);
 }
+
+
 
 
 
