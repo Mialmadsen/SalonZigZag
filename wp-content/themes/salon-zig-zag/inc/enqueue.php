@@ -56,6 +56,13 @@ function szz_enqueue_assets()
         ['szz-main'],
         '1.0.0'
     );
+
+    wp_enqueue_style(
+        'szz-value-card',
+        get_template_directory_uri() . '/assets/css/components/value-card.css',
+        ['szz-main'],
+        '1.0.0'
+    );
     
     wp_enqueue_style(
         'szz-about-page',

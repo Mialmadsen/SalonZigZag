@@ -231,3 +231,48 @@ form.cart > .single_add_to_cart_button {
 .woocommerce div.product .product_meta .posted_in:last-child {
   margin-bottom: 0;
 }
+
+
+@media (max-width: 535px) {
+
+  .woocommerce-order-overview {
+    display: block !important;
+    margin-block: 3rem;
+    padding-inline: var(--space-md);
+  }
+
+  .woocommerce-order-overview li {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+
+    /* THIS creates visible spacing */
+    padding-block: 1.25rem !important;
+
+    /* optional: small gap between items */
+    margin: 0 !important;
+
+    border: none !important;
+    text-align: left !important;
+
+    font-size: var(--text-small);
+    line-height: 1.6;
+  }
+
+  /* remove ALL possible separators */
+  .woocommerce-order-overview li::after,
+  .woocommerce-order-overview li::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* label → value spacing */
+  .woocommerce-order-overview li strong {
+    display: block !important;
+    margin-top: 0.5rem;
+    font-size: var(--text-h4);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+}
