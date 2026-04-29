@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<!-- Behandlinger section -->
+<?php get_template_part('template-parts/sections/services-slider'); ?>
+<!-- Testimonials section -->
 
 
 <!-- Info card section  -->
