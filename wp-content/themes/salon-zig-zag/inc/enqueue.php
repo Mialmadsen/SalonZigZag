@@ -64,6 +64,13 @@ function szz_enqueue_assets()
         '1.0.0'
     );
 
+    wp_enqueue_style(
+        'szz-hero',
+        get_template_directory_uri() . '/assets/css/components/hero.css',
+        ['szz-main'],
+        '1.0.0'
+    );
+
     if (is_page('om-salonen')) {
         wp_enqueue_style(
             'szz-about-page',
@@ -109,6 +116,31 @@ function szz_enqueue_assets()
         '1.0.0',
         true
     );
+
+    if (is_front_page()) {
+        wp_enqueue_style(
+            'cloudinary-player',
+            'https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.css',
+            [],
+            null
+        );
+
+        wp_enqueue_script(
+            'cloudinary-player',
+            'https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.js',
+            [],
+            null,
+            true
+        );
+
+        wp_enqueue_script(
+            'szz-hero-player',
+            get_template_directory_uri() . '/assets/js/hero-player.js',
+            ['cloudinary-player'],
+            '1.0.0',
+            true
+        );
+    }
 }
 
 
