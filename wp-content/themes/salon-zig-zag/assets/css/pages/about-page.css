@@ -33,6 +33,13 @@
     flex-direction: row-reverse;
 }
 
+.info-card__text-part a {
+    display: inline-flex;
+    width: fit-content;
+    align-self: flex-start;
+    margin-top: var(--space-md);
+}
+
 
 
 @media (max-width: 48rem) {

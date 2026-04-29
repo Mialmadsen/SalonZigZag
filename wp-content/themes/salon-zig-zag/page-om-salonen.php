@@ -73,7 +73,9 @@ get_header(); ?>
 
         if ($info_cards->have_posts()) :
             while ($info_cards->have_posts()) : $info_cards->the_post();
-                get_template_part('template-parts/components/info-card');
+                get_template_part('template-parts/components/info-card', null, [
+                    'button_template' => 'book'
+                ]);
             endwhile;
             wp_reset_postdata();
         endif;
@@ -96,7 +98,9 @@ get_header(); ?>
 
         if ($info_cards->have_posts()) :
             while ($info_cards->have_posts()) : $info_cards->the_post();
-                get_template_part('template-parts/components/info-card');
+                get_template_part('template-parts/components/info-card', null, [
+                    'button_template' => 'book'
+                ]);
             endwhile;
             wp_reset_postdata();
         endif;
@@ -106,8 +110,7 @@ get_header(); ?>
 
 
     <!-- SEKTION 4 (VALUE SECTION) -->
-            <?php get_template_part('template-parts/components/value-card'); ?>
-      
+    <?php get_template_part('template-parts/components/value-card'); ?>
 
 </main>
 

@@ -4,6 +4,9 @@ $header     = get_field('info_card_header');
 $subheading = get_field('info_card_subheading');
 $main_text  = get_field('info_card_main_text');
 $custom_url = "http://salon-zig-zag-agerbaek.local/index.php/om-salonen/";
+
+// NYT: modtager valg fra get_template_part()
+$button_template = $args['button_template'] ?? 'secondary';
 ?>
 
 <div class="info-card-wrapper">
@@ -31,10 +34,18 @@ $custom_url = "http://salon-zig-zag-agerbaek.local/index.php/om-salonen/";
             <?php endif; ?>
 
             <?php
-            get_template_part('template-parts/components/button-secondary', null, [
-                'url'  => $custom_url,
-                'text' => 'Læs mere'
-            ]);
+            // NY LOGIK: vælg knap uden at ændre andet sted
+            if ($button_template === 'book') {
+                get_template_part('template-parts/components/button-book', null, [
+                    'url'  => $custom_url,
+                    'text' => 'Book tid'
+                ]);
+            } else {
+                get_template_part('template-parts/components/button-secondary', null, [
+                    'url'  => $custom_url,
+                    'text' => 'Læs mere'
+                ]);
+            }
             ?>
         </div>
 
