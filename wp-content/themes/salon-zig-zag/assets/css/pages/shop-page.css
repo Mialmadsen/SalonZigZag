@@ -130,14 +130,13 @@
   border-color: var(--color-olive);
 }
 
-
-
 /* SHOP SINGLE PRODUCT PAGE */
 
-/* === SINGLE PRODUCT ADD TO CART (MATCH PRODUCT GRID STYLE) === */
 
+/* === SINGLE PRODUCT ADD TO CART (MATCH PRODUCT GRID STYLE) === */
+/* Styles the main "Add to cart" button on the single product page */
 .woocommerce div.product form.cart .single_add_to_cart_button {
-  display: inline-flex;
+  display: inline-flex; /* aligns icon/text nicely */
   align-items: center;
   justify-content: center;
 
@@ -161,66 +160,74 @@
     transform var(--transition);
 }
 
-/* Hover */
+/* Hover state for add to cart button */
 .woocommerce div.product form.cart .single_add_to_cart_button:hover {
   background-color: transparent;
   color: var(--color-olive);
   border-color: var(--color-olive);
 }
 
-/* Focus */
+/* Focus state for accessibility (keyboard navigation) */
 .woocommerce div.product form.cart .single_add_to_cart_button:focus-visible {
   outline: 2px solid var(--color-olive);
   outline-offset: 2px;
 }
 
-/* Force override WooCommerce purple (.alt) */
+/* Overrides WooCommerce default "alt" purple styling */
 .woocommerce div.product form.cart .single_add_to_cart_button.alt {
   background-color: var(--color-white);
   color: var(--color-text);
   border-color: var(--color-dark);
 }
 
+
 /* === SPACING: QUANTITY + ADD TO CART === */
+/* Adds spacing around quantity and button for better layout */
 
 .woocommerce div.product form.cart .quantity {
-  margin-top: var(--space-sm);   /* space above quantity */
+  margin-top: var(--space-sm);   /* space above quantity field */
   margin-bottom: var(--space-sm); /* space between quantity and button */
 }
 
+/* Adds spacing above the button */
 .woocommerce div.product form.cart .single_add_to_cart_button {
-  margin-top: var(--space-sm); /* extra space above button */
+  margin-top: var(--space-sm);
 }
 
+
 /* === FORCE MOVE QUANTITY DOWN === */
+/* Overrides theme defaults to push quantity lower */
 
 form.cart > .quantity {
   margin-top: 1rem;
 }
 
+/* Adds spacing above add to cart button */
 form.cart > .single_add_to_cart_button {
   margin-top: 1rem;
 }
 
-/* Stronger specificity */
+/* Stronger specificity to override theme styles */
 .woocommerce div.product form.cart > .quantity {
   margin-top: 1rem !important;
 }
 
-/* Space between quantity and button */
+
+/* Space between quantity and add to cart button (horizontal layout adjustment) */
 .woocommerce div.product form.cart > .single_add_to_cart_button {
   margin-left: var(--space-sm);
 }
 
+
 /* === PRODUCT META LINE BREAK === */
+/* Makes categories and brand appear on separate lines */
 
 .woocommerce div.product .product_meta .posted_in {
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem; /* space between meta rows */
 }
 
-/* optional: remove extra spacing on last item */
+/* Removes extra spacing on last meta item */
 .woocommerce div.product .product_meta .posted_in:last-child {
   margin-bottom: 0;
 }
-
