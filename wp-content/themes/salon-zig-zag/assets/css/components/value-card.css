@@ -1,15 +1,8 @@
 .value-section {
-    padding-block: var(--space-section);
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-}
-
-.value-section.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding-inline: var(--page-margin);
+    align-items: center;
 }
 
 /* --- Overskrift (Centreret og på 2 linjer) --- */
@@ -30,7 +23,7 @@
     width: 100%;
     align-items: stretch;
     /* Her skaber vi den luft, du bad om */
-    margin-bottom: var(--space-section) !important;
+    margin-bottom: var(--space-section);
 }
 
 /* --- Det enkelte kort --- */
@@ -69,17 +62,16 @@
 
 /* --- Beholder til Book Tid knappen --- */
 .value-section__button-wrapper {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    clear: both;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* Tvinger selve knappen til at fjerne marginer, der skubber den skævt */
 .value-section__button-wrapper .btn-primary {
-    margin: 0 !important;
-    display: inline-block !important;
+    margin: 0;
+    display: inline-block;
 }
 
 /* --- Mobil-tilpasning --- */
@@ -87,7 +79,7 @@
     .value-cards-grid {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
-        margin-bottom: var(--space-xl) !important;
+        margin-bottom: var(--space-xl);
     }
     
     .value-card:not(:first-child)::before {

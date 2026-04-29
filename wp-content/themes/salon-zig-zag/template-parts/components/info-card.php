@@ -3,7 +3,7 @@ $image      = get_field('info_card_image');
 $header     = get_field('info_card_header');
 $subheading = get_field('info_card_subheading');
 $main_text  = get_field('info_card_main_text');
-$custom_url = "http://salon-zig-zag-agerbaek.local/index.php/om-salonen/";
+$custom_url = get_permalink( get_page_by_path( 'om-salonen' ) );
 
 // modtager valg af knap fra get_template_part()
 $button_template = $args['button_template'] ?? 'secondary';

@@ -80,18 +80,23 @@ function szz_enqueue_assets()
         );
     }
 
-    wp_enqueue_style(
-        'szz-gallery',
-        get_template_directory_uri() . '/assets/css/pages/gallery.css',
-        ['szz-main'],
-        '1.0.0'
-    );
-    wp_enqueue_style(
-        'szz-priser-page',
-        get_template_directory_uri() . '/assets/css/pages/priser-page.css',
-        ['szz-main'],
-        '1.0.0'
-    );
+    if (is_page('galleri')) {
+        wp_enqueue_style(
+            'szz-gallery',
+            get_template_directory_uri() . '/assets/css/pages/gallery.css',
+            ['szz-main'],
+            '1.0.0'
+        );
+    }
+
+    if (is_page('priser')) {
+        wp_enqueue_style(
+            'szz-priser-page',
+            get_template_directory_uri() . '/assets/css/pages/priser-page.css',
+            ['szz-main'],
+            '1.0.0'
+        );
+    }
     if (is_woocommerce()) {
         wp_enqueue_style(
             'szz-shop-page',
