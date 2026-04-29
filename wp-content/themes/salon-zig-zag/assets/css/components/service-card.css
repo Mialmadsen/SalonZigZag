@@ -6,7 +6,8 @@
 .behandlinger {
   overflow-x: clip;
   position: relative;
-  touch-action: pan-y; /* to remove circle with arrow on mobile in browser */
+  touch-action: pan-y;
+  padding: 0;  /* reset global section padding */ /* to remove circle with arrow on mobile in browser */
 }
 
 /* Track — flex row, JS drives translateX */

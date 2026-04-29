@@ -11,26 +11,26 @@ $button_template = $args['button_template'] ?? 'secondary';
 
 <div class="info-card-wrapper">
     <div class="info-card-container">
-        
+
         <div class="info-card__image-part">
             <?php if ( $image ) : ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
             <?php endif; ?>
         </div>
 
         <div class="info-card__text-part">
             <?php if ( $header ) : ?>
-                <h2 class="info-card__title"><?php echo esc_html($header); ?></h2>
+            <h2 class="info-card__title"><?php echo esc_html($header); ?></h2>
             <?php endif; ?>
 
             <?php if ( $subheading ) : ?>
-                <h3 class="info-card__subtitle"><?php echo esc_html($subheading); ?></h3>
+            <h4 class="info-card__subtitle"><?php echo esc_html($subheading); ?></h4>
             <?php endif; ?>
 
             <?php if ( $main_text ) : ?>
-                <div class="info-card__body-text">
-                    <?php echo wpautop(esc_html($main_text)); ?>
-                </div>
+            <div class="info-card__body-text">
+                <?php echo wpautop(esc_html($main_text)); ?>
+            </div>
             <?php endif; ?>
 
             <?php

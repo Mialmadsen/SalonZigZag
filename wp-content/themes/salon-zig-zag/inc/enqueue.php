@@ -109,7 +109,6 @@ function szz_enqueue_assets()
         '1.0.0',
         true
     );
-
 }
 
 
