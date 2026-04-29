@@ -5,7 +5,7 @@ $subheading = get_field('info_card_subheading');
 $main_text  = get_field('info_card_main_text');
 $custom_url = "http://salon-zig-zag-agerbaek.local/index.php/om-salonen/";
 
-// NYT: modtager valg fra get_template_part()
+// modtager valg af knap fra get_template_part()
 $button_template = $args['button_template'] ?? 'secondary';
 ?>
 
@@ -34,7 +34,8 @@ $button_template = $args['button_template'] ?? 'secondary';
             <?php endif; ?>
 
             <?php
-            // NY LOGIK: vælg knap uden at ændre andet sted
+            
+            // mulighed for at vælge knap uden at ændre andet sted
             if ($button_template === 'book') {
                 get_template_part('template-parts/components/button-book', null, [
                     'url'  => $custom_url,
