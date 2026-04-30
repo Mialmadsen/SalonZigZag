@@ -34,6 +34,8 @@ endif;
 ?>
 <!-- Info card section done  -->
 
+<?php get_template_part('template-parts/sections/shop-section'); ?>
+
 <?php get_template_part('template-parts/components/value-card'); ?>
 
 

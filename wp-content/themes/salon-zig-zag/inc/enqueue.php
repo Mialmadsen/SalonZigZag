@@ -58,6 +58,13 @@ function szz_enqueue_assets()
     );
 
     wp_enqueue_style(
+        'szz-shop-section',
+        get_template_directory_uri() . '/assets/css/components/shop-section.css',
+        ['szz-main'],
+        '1.0.0'
+    );
+
+    wp_enqueue_style(
         'szz-value-card',
         get_template_directory_uri() . '/assets/css/components/value-card.css',
         ['szz-main'],
