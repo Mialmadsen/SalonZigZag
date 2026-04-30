@@ -1,129 +1,279 @@
 /* =========================================
    PAGE BASE
+   Main wrapper for the pricing page
 ========================================= */
 
 .priser-page {
-    background-color: var(--color-bg);
-  }
-  
-  /* =========================================
-     INTRO
-  ========================================= */
-  
-  .priser-intro-section {
-    padding-block: var(--space-section);
-  }
-  
-  .priser-intro {
-    max-width: 50rem;
-  }
-  
-  .priser-intro h1 {
-    margin-bottom: var(--space-sm);
-  }
-  
-  .priser-intro p {
-    color: var(--color-text-muted);
-  }
-  
-  /* =========================================
-     LIST SECTION (reduced top spacing)
-  ========================================= */
-  
-  .priser-list-section {
-    padding-top: var(--space-md);
-    padding-bottom: var(--space-section);
-  }
-  
-  /* =========================================
-     GRID
-  ========================================= */
-  
+  background-color: var(--color-bg);
+}
+
+/* =========================================
+   INTRO SECTION
+   Top section with headline + intro text
+========================================= */
+
+.priser-intro-section {
+  /* Vertical spacing above and below intro */
+  padding-block: var(--space-section);
+}
+
+.priser-intro {
+  /* Prevent intro text from becoming too wide */
+  max-width: 50rem;
+}
+
+.priser-intro h1 {
+  /* Space below headline */
+  margin-bottom: var(--space-sm);
+}
+
+.priser-intro p {
+  /* Muted paragraph color */
+  color: var(--color-text-muted);
+}
+
+/* =========================================
+   PRICING LIST SECTION
+   Main section containing all pricing cards
+========================================= */
+
+.priser-list-section {
+  /* Slightly smaller top spacing */
+  padding-top: var(--space-md);
+
+  /* Normal section spacing bottom */
+  padding-bottom: var(--space-section);
+}
+
+/* =========================================
+   GRID LAYOUT
+   Creates 2-column layout on desktop/tablet
+========================================= */
+
+.priser-grid {
+  display: grid;
+
+  /* 2 equal columns */
+  grid-template-columns: repeat(2, 1fr);
+
+  /* Space between cards */
+  gap: var(--space-lg);
+}
+
+/* =========================================
+   PRICE CARD
+   Individual category card
+========================================= */
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+
+  /* Space between rows */
+  gap: var(--space-sm);
+
+  /* Internal spacing */
+  padding: var(--space-md);
+
+  /* Clean airy design */
+  background-color: transparent;
+  border: none;
+}
+
+/* =========================================
+   CARD HEADING
+========================================= */
+
+.price-card h3 {
+  font-size: var(--text-h3);
+
+  /* Space below title */
+  margin-bottom: var(--space-sm);
+
+  color: var(--color-text);
+}
+
+/* =========================================
+   PRICE ROW
+   One service + one price
+========================================= */
+
+.price-row {
+  display: grid;
+
+  /*
+    2-column layout:
+    - left side takes remaining space
+    - right side auto width
+  */
+  grid-template-columns: 1fr auto;
+
+  /* Space between service and price */
+  gap: 1rem;
+
+  /* Align top of text */
+  align-items: start;
+
+  /* Vertical spacing between rows */
+  padding-block: 0.5rem;
+}
+
+/* =========================================
+   SERVICE TEXT (LEFT SIDE)
+========================================= */
+
+.price-row span:first-child {
+  font-size: var(--text-body);
+  color: var(--color-text);
+
+  /* Better readability */
+  line-height: 1.5;
+
+  /*
+    Prevent weird breaking behavior
+    while still allowing wrapping
+  */
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* =========================================
+   PRICE TEXT (RIGHT SIDE)
+========================================= */
+
+.price-row span:last-child {
+  font-size: var(--text-body);
+
+  /* Slightly muted price color */
+  color: var(--color-text-muted);
+
+  /*
+    Prevent prices from wrapping
+    on normal screen sizes
+  */
+  white-space: nowrap;
+
+  /* Align prices neatly right */
+  text-align: right;
+}
+
+/* =========================================
+   NOTE TEXT
+   Text below the pricing cards
+========================================= */
+
+.priser-note {
+  /* Space above note */
+  margin-top: var(--space-lg);
+
+  /* Prevent overly wide text */
+  max-width: 40rem;
+
+  /* Center horizontally */
+  margin-inline: auto;
+
+  /* Center text */
+  text-align: center;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-body);
+
+  /* Better readability */
+  line-height: 1.6;
+}
+
+/* =========================================
+   CTA BUTTON WRAPPER
+   Centers the button below pricing
+========================================= */
+
+.priser-button-wrapper {
+  display: flex;
+
+  /* Center button horizontally */
+  justify-content: center;
+
+  /* Space above button */
+  margin-top: var(--space-lg);
+}
+
+/* =========================================
+   MOBILE LAYOUT
+   Applies ONLY to phones
+   Tablets still use desktop layout
+========================================= */
+
+@media (max-width: 47rem) {
+
   .priser-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-  }
-  
-  /* =========================================
-     CARD (airy / no border look)
-  ========================================= */
-  
-  .price-card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    padding: var(--space-md);
-  
-    background-color: transparent;
-    border: none;
-  }
-  
-  /* =========================================
-     HEADING
-  ========================================= */
-  
-  .price-card h3 {
-    font-size: var(--text-h3);
-    margin-bottom: var(--space-sm);
-    color: var(--color-text);
-  }
-  
-  /* =========================================
-     ROWS
-  ========================================= */
-  
-  .price-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 0.25rem;
-  }
-  
-  /* service */
-  .price-row span:first-child {
-    font-size: var(--text-body);
-    color: var(--color-text);
-  }
-  
-  /* price */
-  .price-row span:last-child {
-    font-size: var(--text-body);
-    color: var(--color-text-muted);
-    white-space: nowrap;
-  }
-  
-  /* =========================================
-     NOTE TEXT (CENTERED UNDER GRID)
-  ========================================= */
-  
-  .priser-note {
-    margin-top: var(--space-lg);
-    max-width: 40rem;
-    margin-inline: auto;
-    text-align: center;
-    color: var(--color-text-muted);
-    font-size: var(--text-body);
-    line-height: 1.6;
-  }
-  
-  /* =========================================
-     CTA
-  ========================================= */
-  
-  .priser-button-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: var(--space-lg);
+
+    /*
+      Switch from 2 columns
+      to 1 column on phones
+    */
+    grid-template-columns: 1fr;
   }
 
-  
-  /* =========================================
-     MOBILE
-  ========================================= */
-  
-  @media (max-width: 48rem) {
-    .priser-grid {
-      grid-template-columns: 1fr;
-    }
+  .price-card {
+
+    /*
+      Reduce side padding
+      for smaller screens
+    */
+    padding-inline: 0;
   }
+
+  .price-row {
+
+    /*
+      Stack service + price
+      vertically on mobile
+    */
+    grid-template-columns: 1fr;
+
+    /* Smaller gap on mobile */
+    gap: 0.25rem;
+  }
+
+  .price-row span:last-child {
+
+    /*
+      Align prices left
+      once stacked vertically
+    */
+    text-align: left;
+  }
+
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE
+   Fix for ultra-small screens (<320px)
+========================================= */
+
+@media (max-width: 20rem) {
+
+  .price-row span:last-child {
+
+    /*
+      Allow prices to wrap
+      instead of overflowing
+    */
+    white-space: normal;
+
+    /* Prevent text overflow */
+    word-break: break-word;
+  }
+
+}
+
+/* =========================================
+   SAFETY RULE
+   Prevent accidental horizontal scrolling
+========================================= */
+
+html,
+body {
+  overflow-x: hidden;
+}
