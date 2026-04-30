@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Galleri
  */
@@ -23,10 +24,8 @@ $big_header = get_field('gallery_page_big_header');
 
                     <?php foreach ($images as $image) : ?>
                         <figure class="gallery-page-card">
-                            <img
-                                src="<?php echo esc_url($image['sizes']['large']); ?>"
-                                data-full="<?php echo esc_url($image['url']); ?>"
-                                alt="<?php echo esc_attr($image['alt']); ?>">
+                            <img src="<?php echo esc_url($image['sizes']['large']); ?>"
+                                data-full="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
                         </figure>
                     <?php endforeach; ?>
 
