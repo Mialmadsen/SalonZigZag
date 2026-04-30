@@ -112,6 +112,17 @@ function szz_enqueue_assets()
         );
     }
 
+    if (is_page('galleri')) {
+        wp_enqueue_script(
+            'szz-gallery-lightbox',
+            get_template_directory_uri() . '/assets/js/gallery-lightbox.js',
+            array(),
+            '1.0.0',
+            true
+        );
+    }
+
+
     if (is_page('priser')) {
         wp_enqueue_style(
             'szz-priser-page',

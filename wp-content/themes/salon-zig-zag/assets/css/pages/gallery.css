@@ -1,3 +1,84 @@
 /* ============================================================
-   GALLERY PAGE — page-specific styles
+   GALLERY PAGE
    ============================================================ */
+
+   .gallery-page-section {
+    padding-top: var(--space-lg);
+}
+
+.gallery-page-big-header {
+    text-align: left;
+    font-size: var(--text-h1);
+    margin-bottom: var(--space-section);
+    margin-top: var(--space-section);
+
+    color: var(--color-text);
+}
+
+/* GRID */
+.gallery-page-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.gallery-page-card {
+    overflow: hidden;
+    border-radius: var(--radius);
+    background-color: var(--color-bg-alt);
+}
+
+.gallery-page-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    transition: transform var(--transition);
+    cursor: pointer;
+}
+
+.gallery-page-card:hover img {
+    transform: scale(1.03);
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(24, 25, 19, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    z-index: 9999;
+}
+
+.gallery-lightbox.is-active {
+    display: flex;
+}
+
+.gallery-lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: var(--radius);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 56.25rem) {
+    .gallery-page-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 37.5rem) {
+    .gallery-page-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+}
