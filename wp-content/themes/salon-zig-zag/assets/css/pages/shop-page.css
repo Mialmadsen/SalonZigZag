@@ -2,9 +2,12 @@
    1. WOOCOMMERCE
    ============================================================ */
 
-   /* SHOP FRONT PAGE */
+/* SHOP FRONT PAGE */
 .content-area {
-  padding: var(--page-margin);
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--page-margin);
 }
 
 /* Shop header */
@@ -32,7 +35,7 @@
   border-radius: var(--radius);
   position: relative;
   transition: transform var(--transition);
-  padding-bottom: 3.75rem; /* space for bottom row */
+  padding-bottom: 3.75rem;
 }
 
 /* Hover */
@@ -64,7 +67,7 @@
   margin: 0;
 }
 
-/* Cart  */
+/* Cart */
 .woocommerce ul.products li.product .button::before {
   font-size: var(--text-h4);
 }
@@ -83,8 +86,8 @@
   background: none;
   border: none;
 }
-/* WOOCOMMERCE ADD TO CART BUTTON (PRODUCT GRID) */
 
+/* Add to cart button styling */
 .woocommerce ul.products li.product .button.add_to_cart_button {
   display: inline-flex;
   align-items: center;
@@ -110,7 +113,7 @@
     transform var(--transition);
 }
 
-/* Hover state — green text + green border, no background */
+/* Hover state */
 .woocommerce ul.products li.product .button.add_to_cart_button:hover {
   background-color: transparent;
   color: var(--color-olive);
@@ -130,13 +133,13 @@
   border-color: var(--color-olive);
 }
 
-/* SHOP SINGLE PRODUCT PAGE */
+/* ============================================================
+   SINGLE PRODUCT PAGE
+   ============================================================ */
 
-
-/* === SINGLE PRODUCT ADD TO CART (MATCH PRODUCT GRID STYLE) === */
-/* Styles the main "Add to cart" button on the single product page */
+/* Main add to cart button */
 .woocommerce div.product form.cart .single_add_to_cart_button {
-  display: inline-flex; /* aligns icon/text nicely */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
@@ -160,79 +163,70 @@
     transform var(--transition);
 }
 
-/* Hover state for add to cart button */
+/* Hover state */
 .woocommerce div.product form.cart .single_add_to_cart_button:hover {
   background-color: transparent;
   color: var(--color-olive);
   border-color: var(--color-olive);
 }
 
-/* Focus state for accessibility (keyboard navigation) */
+/* Focus state */
 .woocommerce div.product form.cart .single_add_to_cart_button:focus-visible {
   outline: 2px solid var(--color-olive);
   outline-offset: 2px;
 }
 
-/* Overrides WooCommerce default "alt" purple styling */
+/* WooCommerce override */
 .woocommerce div.product form.cart .single_add_to_cart_button.alt {
   background-color: var(--color-white);
   color: var(--color-text);
   border-color: var(--color-dark);
 }
 
-
-/* === SPACING: QUANTITY + ADD TO CART === */
-/* Adds spacing around quantity and button for better layout */
-
+/* Quantity spacing */
 .woocommerce div.product form.cart .quantity {
-  margin-top: var(--space-sm);   /* space above quantity field */
-  margin-bottom: var(--space-sm); /* space between quantity and button */
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }
 
-/* Adds spacing above the button */
+/* Button spacing */
 .woocommerce div.product form.cart .single_add_to_cart_button {
   margin-top: var(--space-sm);
 }
 
-
-/* === FORCE MOVE QUANTITY DOWN === */
-/* Overrides theme defaults to push quantity lower */
-
+/* Layout spacing fixes */
 form.cart > .quantity {
   margin-top: 1rem;
 }
 
-/* Adds spacing above add to cart button */
 form.cart > .single_add_to_cart_button {
   margin-top: 1rem;
 }
 
-/* Stronger specificity to override theme styles */
+/* Override theme spacing */
 .woocommerce div.product form.cart > .quantity {
   margin-top: 1rem !important;
 }
 
-
-/* Space between quantity and add to cart button (horizontal layout adjustment) */
+/* Button alignment spacing */
 .woocommerce div.product form.cart > .single_add_to_cart_button {
   margin-left: var(--space-sm);
 }
 
-
-/* === PRODUCT META LINE BREAK === */
-/* Makes categories and brand appear on separate lines */
-
+/* Product meta layout */
 .woocommerce div.product .product_meta .posted_in {
   display: block;
-  margin-bottom: 0.25rem; /* space between meta rows */
+  margin-bottom: 0.25rem;
 }
 
-/* Removes extra spacing on last meta item */
+/* Remove last spacing */
 .woocommerce div.product .product_meta .posted_in:last-child {
   margin-bottom: 0;
 }
 
-
+/* ============================================================
+   MOBILE ORDER OVERVIEW (≤535px)
+   ============================================================ */
 @media (max-width: 535px) {
 
   .woocommerce-order-overview {
@@ -246,10 +240,7 @@ form.cart > .single_add_to_cart_button {
     width: 100% !important;
     float: none !important;
 
-    /* THIS creates visible spacing */
     padding-block: 1.25rem !important;
-
-    /* optional: small gap between items */
     margin: 0 !important;
 
     border: none !important;
@@ -259,14 +250,12 @@ form.cart > .single_add_to_cart_button {
     line-height: 1.6;
   }
 
-  /* remove ALL possible separators */
   .woocommerce-order-overview li::after,
   .woocommerce-order-overview li::before {
     display: none !important;
     content: none !important;
   }
 
-  /* label → value spacing */
   .woocommerce-order-overview li strong {
     display: block !important;
     margin-top: 0.5rem;
@@ -274,5 +263,82 @@ form.cart > .single_add_to_cart_button {
     font-weight: 500;
     line-height: 1.5;
   }
+}
 
+/* ============================================================
+   RESPONSIVE GRID SYSTEM
+   ============================================================ */
+
+/* Tablet layout (3 products per row) */
+@media (max-width: 64rem) {
+  .woocommerce ul.products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile layout (2 products per row + ordering fix) */
+@media (max-width: 48rem) {
+
+  .woocommerce ul.products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .woocommerce-ordering {
+    padding-inline: var(--page-margin);
+  }
+
+  .woocommerce-ordering .orderby {
+    width: 100%;
+    font-size: var(--text-small);
+    padding: 0.5rem;
+  }
+}
+
+/* Tablet UI scaling (price + button) */
+@media (max-width: 64rem) {
+
+  .woocommerce ul.products li.product .price {
+    font-size: var(--text-small);
+  }
+
+  .woocommerce ul.products li.product .button.add_to_cart_button {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.625rem;
+  }
+}
+
+/* Mobile UI scaling (smaller buttons + price) */
+@media (max-width: 48rem) {
+
+  .woocommerce ul.products li.product .price {
+    font-size: 0.75rem;
+  }
+
+  .woocommerce ul.products li.product .button.add_to_cart_button {
+    font-size: 0.625rem;
+    padding: 0.35rem 0.45rem;
+    border-radius: var(--radius);
+  }
+}
+
+/* Small phone layout (1 product per row + refined UI) */
+@media (max-width: 23.75rem) {
+
+  .woocommerce ul.products {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .woocommerce ul.products li.product {
+    width: 100% !important;
+  }
+
+  .woocommerce ul.products li.product .price {
+    font-size: 0.8125rem;
+  }
+
+  .woocommerce ul.products li.product .button.add_to_cart_button {
+    font-size: 0.6875rem;
+    padding: 0.45rem 0.6rem;
+  }
 }
