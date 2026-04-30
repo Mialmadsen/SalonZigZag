@@ -86,6 +86,11 @@ get_header(); ?>
             </div>
 
         </div>
+
+        <!-- Galleri -->
+
+        <?php get_template_part('template-parts/sections/galleri-grid'); ?>
+        
     </section>
 
 
