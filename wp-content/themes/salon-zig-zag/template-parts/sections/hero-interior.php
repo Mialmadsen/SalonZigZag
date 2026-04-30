@@ -1,10 +1,12 @@
 <?php
 $image     = get_field('hero_image');
 $title     = get_field('hero_text');
-
+$telephone = get_field('footer_telefon', 'option');
+$email     = get_field('footer_email', 'option');
 
 $image_url = is_array($image) ? $image['url'] : $image;
 $image_alt = is_array($image) ? $image['alt'] : '';
+
 ?>
 
 
@@ -20,4 +22,13 @@ $image_alt = is_array($image) ? $image['alt'] : '';
             <h1 class="hero-interior__title"><?php echo esc_html($title); ?></h1>
         <?php endif; ?>
     </div>
+    <div class="hero-interior__contact">
+        <?php if ($telephone) : ?>
+            <span class="hero-interior__phone"><?php echo esc_html($telephone); ?></span>
+        <?php endif; ?>
+        <?php if ($email) : ?>
+            <span class="hero-interior__email"><?php echo esc_html($email); ?></span>
+        <?php endif; ?>
+    </div>
+
 </section>

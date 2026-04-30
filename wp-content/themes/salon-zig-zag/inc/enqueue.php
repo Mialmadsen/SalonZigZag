@@ -83,7 +83,7 @@ function szz_enqueue_assets()
             'szz-hero-interior',
             get_template_directory_uri() . '/assets/css/components/hero-interior.css',
             ['szz-main'],
-            '1.0.0'
+            '1.0.1'
         );
     }
 

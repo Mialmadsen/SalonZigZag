@@ -56,10 +56,46 @@
   padding-inline: var(--page-margin);
 }
 
+/* Contact bar — bottom of hero */
+.hero-interior__contact {
+  position: absolute;
+  bottom: var(--space-section);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm) var(--space-lg);
+  background-color: color-mix(in srgb, var(--color-blush) 75%, transparent);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius);
+  width: max-content;
+  max-width: calc(100% - var(--page-margin) * 2);
+}
+
+.hero-interior__phone,
+.hero-interior__email {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-dark);
+}
+
 /* Mobile */
 @media (max-width: 664px) {
   .hero-interior {
     min-height: 60vw;
     max-height: unset;
+  }
+
+  .hero-interior__contact {
+    padding: 0.25rem var(--space-sm);
+    gap: var(--space-sm);
+    bottom: var(--space-sm);
+  }
+
+  .hero-interior__phone,
+  .hero-interior__email {
+    font-size: 0.625rem;
   }
 }
