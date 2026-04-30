@@ -32,11 +32,23 @@ if ($info_query->have_posts()) :
     wp_reset_postdata();
 endif;
 ?>
-<!-- Info card section done  -->
+<!-- Value cards section  -->
 
 <?php get_template_part('template-parts/sections/shop-section'); ?>
 
 <?php get_template_part('template-parts/components/value-card'); ?>
+
+<!-- Testimonials section  -->
+
+<?php $heading = get_field('testimonial_big_heading'); ?>
+
+<?php if ($heading) : ?>
+    <section class="testimonial-heading-section">
+        <div class="test-header-container">
+            <h2><?php echo esc_html($heading); ?></h2>
+        </div>
+    </section>
+<?php endif; ?>
 
 
 <section class="container">
