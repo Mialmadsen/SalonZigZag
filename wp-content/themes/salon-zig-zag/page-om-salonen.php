@@ -114,6 +114,11 @@ get_header(); ?>
     <!-- SEKTION 4 (VALUE SECTION) -->
     <?php get_template_part('template-parts/components/value-card'); ?>
 
+
+    <!-- Galleri -->
+
+<?php get_template_part('template-parts/sections/galleri-grid'); ?>
+
 </main>
 
 <?php get_footer(); ?>
