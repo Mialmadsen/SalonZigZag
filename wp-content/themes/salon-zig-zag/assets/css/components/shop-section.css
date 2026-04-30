@@ -60,36 +60,34 @@
     bottom: var(--space-sm);
     left: var(--space-md); /* match card padding rhythm */
     font-size: var(--text-small);
+    transition: all var(--transition); /* for smooth resizing */
   }
   
-  /* Button (bottom right) */
+  /* Button (bottom right) aligned with image's right border */
   .shop-section ul.products li.product .button {
     position: absolute;
     bottom: var(--space-sm);
-    right: var(--space-sm);
-  
+    right: 0; /* Align button with the right border of the image */
+    
     font-size: 0.75rem;
     padding: 0.4rem 0.6rem;
-  
     border: 1px solid var(--color-dark);
     background: var(--color-white);
     border-radius: var(--radius);
+    transition: all var(--transition); /* for smooth resizing */
   }
-
+  
   /* ============================================================
-   BUTTON STYLE (FRONT PAGE PRODUCTS)
-   ============================================================ */
-
-/* Default = see-through */
-.shop-section ul.products li.product .button {
+     BUTTON STYLE (FRONT PAGE PRODUCTS)
+     ============================================================ */
+  
+  .shop-section ul.products li.product .button {
     background-color: transparent;
     color: var(--color-text);
     border: 1px solid var(--color-dark);
     border-radius: var(--radius);
-  
     font-size: 0.75rem;
     padding: 0.4rem 0.6rem;
-  
     transition: all var(--transition);
   }
   
@@ -112,33 +110,30 @@
     transform: scale(0.95);
   }
   
-
   /* ============================================================
-   STACK "SE KURV" DIRECTLY ABOVE BUTTON
-   ============================================================ */
-
-/* Keep card as positioning context */
-.shop-section ul.products li.product {
+     STACK "SE KURV" DIRECTLY ABOVE BUTTON
+     ============================================================ */
+  
+  /* Keep card as positioning context */
+  .shop-section ul.products li.product {
     position: relative;
   }
   
-  /* Button stays bottom-right */
+  /* Button stays bottom-right aligned with image */
   .shop-section ul.products li.product .button {
     position: absolute;
     bottom: var(--space-sm);
-    right: var(--space-sm);
+    right: 0; /* Align with the right edge of the image */
   }
   
   /* "Se kurv" sits JUST above button */
   .shop-section ul.products li.product a.added_to_cart {
     position: absolute;
     bottom: calc(var(--space-sm) + 2.6rem); /* 👈 key fix */
-    right: var(--space-sm);
-  
+    right: 0; /* Align "Se kurv" with button's right edge */
     font-size: 0.7rem;
     color: var(--color-text);
     text-decoration: underline;
-  
     margin: 0;
     padding: 0;
     background: none;
@@ -148,25 +143,80 @@
   .shop-section ul.products li.product a.added_to_cart:hover {
     color: var(--color-olive);
   }
-
+  
   /* ============================================================
      RESPONSIVE
      ============================================================ */
   
+  /* ≤ 1024px */
   @media (max-width: 64rem) {
     .shop-section ul.products {
       grid-template-columns: repeat(3, 1fr) !important;
     }
   }
   
+  /* ≤ 768px */
   @media (max-width: 48rem) {
     .shop-section ul.products {
       grid-template-columns: repeat(2, 1fr) !important;
     }
   }
   
+  /* ≤ 520px */
+  @media (max-width: 32.5rem) {
+  
+    /* Scale button and price together */
+    .shop-section ul.products li.product .button,
+    .shop-section ul.products li.product .price {
+      font-size: 0.65rem;
+      padding: 0.3rem 0.5rem;
+    }
+  
+    .shop-section ul.products li.product .button {
+      right: 0; /* Align button with the right border of the image */
+      white-space: nowrap;
+    }
+  
+    .shop-section ul.products li.product .price {
+      font-size: 0.65rem;
+    }
+  }
+  
+  /* ≤ 470px */
+  @media (max-width: 29.375rem) {
+  
+    /* Scale button and price together */
+    .shop-section ul.products li.product .button,
+    .shop-section ul.products li.product .price {
+      font-size: 0.45rem;
+      padding: 0.15rem 0.3rem;
+    }
+  
+    .shop-section ul.products li.product .button {
+      right: 0; /* Align button with the right border of the image */
+    }
+  }
+  
+  /* ≤ 380px */
   @media (max-width: 23.75rem) {
+  
     .shop-section ul.products {
       grid-template-columns: 1fr !important;
     }
+  
+    /* Scale button and price together */
+    .shop-section ul.products li.product .button,
+    .shop-section ul.products li.product .price {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.6rem;
+    }
+  
+    .shop-section ul.products li.product .button {
+      right: 0; /* Align button with the right border of the image */
+    }
+  }
+  
+  .shop-section ul.products li.product .price {
+    left: var(--space-md);
+    font-size: var(--text-small);
   }
