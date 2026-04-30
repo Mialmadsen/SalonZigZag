@@ -4,7 +4,7 @@
 }
 
 .info-card-container {
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;

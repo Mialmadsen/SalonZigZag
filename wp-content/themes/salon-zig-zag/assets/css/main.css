@@ -214,6 +214,20 @@ section {
   cursor: not-allowed;
 }
 
+
+/* ============================================================
+   5. TESTIMONIAL HEADING
+   ============================================================ */
+.testimonial-heading-section {
+  padding-bottom: 0 !important;
+}
+
+.test-header-container{
+  text-align: center;
+}
+
+
+
 /* ============================================================
    6. RESPONSIVE
    ============================================================ */
