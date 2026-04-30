@@ -1,8 +1,11 @@
-<?php 
+<?php
+
 /**
  * Template Name: Om Salonen
  */
 get_header(); ?>
+
+<?php get_template_part('template-parts/sections/hero-interior'); ?>
 
 <main class="about-page">
 
@@ -28,14 +31,14 @@ get_header(); ?>
                         if ($hours->have_posts()) :
                             while ($hours->have_posts()) : $hours->the_post();
                         ?>
-                            <li>
-                                <span class="day">
-                                    <?php echo esc_html(get_field('day_of_the_week')); ?>:
-                                </span>
-                                <span class="time">
-                                    <?php echo esc_html(get_field('opening_hour')); ?>
-                                </span>
-                            </li>
+                                <li>
+                                    <span class="day">
+                                        <?php echo esc_html(get_field('day_of_the_week')); ?>:
+                                    </span>
+                                    <span class="time">
+                                        <?php echo esc_html(get_field('opening_hour')); ?>
+                                    </span>
+                                </li>
                         <?php
                             endwhile;
                             wp_reset_postdata();
@@ -48,9 +51,8 @@ get_header(); ?>
                 <div class="about-map-wrapper">
                     <?php $map = get_field('footer_map', 'option'); ?>
                     <?php if ($map) : ?>
-                        <img class="about-map-img"
-                             src="<?php echo esc_url($map['url']); ?>"
-                             alt="<?php echo esc_attr($map['alt']); ?>">
+                        <img class="about-map-img" src="<?php echo esc_url($map['url']); ?>"
+                            alt="<?php echo esc_attr($map['alt']); ?>">
                     <?php endif; ?>
                 </div>
 

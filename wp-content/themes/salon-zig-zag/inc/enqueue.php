@@ -78,6 +78,15 @@ function szz_enqueue_assets()
         '1.0.0'
     );
 
+    if (is_page('om-salonen') || is_page('priser')) {
+        wp_enqueue_style(
+            'szz-hero-interior',
+            get_template_directory_uri() . '/assets/css/components/hero-interior.css',
+            ['szz-main'],
+            '1.0.0'
+        );
+    }
+
     if (is_page('om-salonen')) {
         wp_enqueue_style(
             'szz-about-page',

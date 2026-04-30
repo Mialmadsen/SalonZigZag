@@ -1,8 +1,10 @@
-<?php 
+<?php
+
 /**
  * Template Name: Priser
  */
 get_header(); ?>
+<?php get_template_part('template-parts/sections/hero-interior'); ?>
 
 <main class="priser-page">
 
@@ -40,28 +42,28 @@ get_header(); ?>
                     while ($price_cards->have_posts()) : $price_cards->the_post();
                 ?>
 
-                <div class="price-card">
+                        <div class="price-card">
 
-                    <h3>
-                        <?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_header', true)); ?>
-                    </h3>
+                            <h3>
+                                <?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_header', true)); ?>
+                            </h3>
 
-                    <div class="price-row">
-                        <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_1', true)); ?></span>
-                        <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_1', true)); ?></span>
-                    </div>
+                            <div class="price-row">
+                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_1', true)); ?></span>
+                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_1', true)); ?></span>
+                            </div>
 
-                    <div class="price-row">
-                        <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_2', true)); ?></span>
-                        <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_2', true)); ?></span>
-                    </div>
+                            <div class="price-row">
+                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_2', true)); ?></span>
+                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_2', true)); ?></span>
+                            </div>
 
-                    <div class="price-row">
-                        <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_3', true)); ?></span>
-                        <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_3', true)); ?></span>
-                    </div>
+                            <div class="price-row">
+                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_3', true)); ?></span>
+                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_3', true)); ?></span>
+                            </div>
 
-                </div>
+                        </div>
 
                 <?php
                     endwhile;
@@ -86,7 +88,7 @@ get_header(); ?>
         </div>
     </section>
 
-    
+
 
 </main>
 
