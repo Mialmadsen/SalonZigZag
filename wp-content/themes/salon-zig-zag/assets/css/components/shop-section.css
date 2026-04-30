@@ -255,7 +255,7 @@
       right: 0; /* Align with the right edge of the button */
     }
   }
-  
+  /* To force that the price is aligned with the product name on the left */
   .shop-section ul.products li.product .price {
     left: var(--space-md);
     font-size: var(--text-small);
