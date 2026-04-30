@@ -38,6 +38,10 @@ endif;
 
 <?php get_template_part('template-parts/components/value-card'); ?>
 
+<!-- Galleri -->
+
+<?php get_template_part('template-parts/sections/galleri-grid'); ?>
+
 <!-- Testimonials section  -->
 
 <?php $heading = get_field('testimonial_big_heading'); ?>

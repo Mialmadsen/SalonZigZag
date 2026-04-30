@@ -59,7 +59,7 @@
 /* Contact bar — bottom of hero */
 .hero-interior__contact {
   position: absolute;
-  bottom: var(--space-section);
+  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -67,7 +67,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-sm) var(--space-lg);
-  background-color: color-mix(in srgb, var(--color-blush) 75%, transparent);
+  background-color: var(--color-blush);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius);
   width: max-content;
@@ -91,7 +91,7 @@
   .hero-interior__contact {
     padding: 0.25rem var(--space-sm);
     gap: var(--space-sm);
-    bottom: var(--space-sm);
+    bottom: 20%;
   }
 
   .hero-interior__phone,
