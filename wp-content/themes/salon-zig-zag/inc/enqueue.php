@@ -57,12 +57,14 @@ function szz_enqueue_assets()
         '1.0.0'
     );
 
-    wp_enqueue_style(
-        'szz-shop-section',
-        get_template_directory_uri() . '/assets/css/components/shop-section.css',
-        ['szz-main'],
-        '1.0.0'
-    );
+    if (is_front_page()) {
+        wp_enqueue_style(
+            'szz-shop-section',
+            get_template_directory_uri() . '/assets/css/components/shop-section.css',
+            ['szz-main'],
+            '1.0.0'
+        );
+    }
 
     wp_enqueue_style(
         'szz-value-card',

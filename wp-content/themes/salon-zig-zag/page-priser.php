@@ -44,23 +44,23 @@ get_header(); ?>
 
                         <div class="price-card">
 
-                            <h3>
+                            <h2>
                                 <?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_header', true)); ?>
-                            </h3>
+                            </h2>
 
                             <div class="price-row">
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_1', true)); ?></span>
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_1', true)); ?></span>
+                                <span class="price-service"><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_1', true)); ?></span>
+                                <span class="price-amount"><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_1', true)); ?></span>
                             </div>
 
                             <div class="price-row">
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_2', true)); ?></span>
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_2', true)); ?></span>
+                                <span class="price-service"><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_2', true)); ?></span>
+                                <span class="price-amount"><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_2', true)); ?></span>
                             </div>
 
                             <div class="price-row">
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_3', true)); ?></span>
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_3', true)); ?></span>
+                                <span class="price-service"><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_service_3', true)); ?></span>
+                                <span class="price-amount"><?php echo esc_html(get_post_meta(get_the_ID(), 'price_card_price_3', true)); ?></span>
                             </div>
 
                         </div>
@@ -90,7 +90,7 @@ get_header(); ?>
         <!-- Galleri -->
 
         <?php get_template_part('template-parts/sections/galleri-grid'); ?>
-        
+
     </section>
 
 

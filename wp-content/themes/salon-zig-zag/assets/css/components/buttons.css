@@ -2,6 +2,44 @@
    BUTTONS
    ============================================================ */
 
+/* Primary */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-button);
+  font-weight: 400;
+  line-height: 1.33;
+  color: var(--color-text);
+  background-color: var(--color-blush);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  transition: background-color var(--transition);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-beige);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-brown);
+  outline-offset: 2px;
+  background-color: var(--color-blush);
+}
+
+.btn-primary:disabled,
+.btn-primary[aria-disabled="true"] {
+  background-color: var(--color-blush);
+  color: var(--color-text-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 /* Secondary — outline */
 .btn-secondary {
   display: inline-flex;
@@ -13,11 +51,13 @@
   line-height: 1.33;
   color: var(--color-text);
   background-color: transparent;
-  border: 1.5px solid var(--color-dark);
+  border: 1.5px solid var(--color-olive);
   border-radius: var(--radius);
   padding: 0.875rem 2.5rem;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
   text-decoration: none;
 }
 
@@ -36,14 +76,14 @@
   cursor: not-allowed;
 }
 
-/* Disabled state — both button types */
-.btn-primary:disabled,
-.btn-primary[aria-disabled="true"] {
-  opacity: 0.4;
-}
-
 /* Mobile */
-@media (max-width: 664px) {
+@media (max-width: 41.5rem) {
+  .btn-primary {
+    width: 9.625rem;
+    height: 2.75rem;
+    padding: 0.625rem 1.5rem;
+  }
+
   .btn-secondary {
     width: 9.625rem;
     height: 2.75rem;
